@@ -8,7 +8,7 @@ The computational environment we tested is as follows.
 
 |Part     |Specifications |
 |---------|---------------|
-|CPU 0/1  |2 of Intel Xeon Gold 6430 (32 cores/CPU, 2.10 GHz) |
+|CPU      |2 of Intel Xeon Gold 6430 (32 cores/CPU, 2.10 GHz) |
 |DRAM     |DDR5 4800 MHz 512 GB (32 GB × 8 ch./CPU) |
 |GPU      |NVIDIA GeForce RTX 5070 (12 GB, PCIe 5.0 x16) |
 |SSD      |19 of Kioxia CM7-V (6.4 TB, 2.45 MIOPS) |
@@ -96,5 +96,5 @@ The computational environment we tested is as follows.
    Run GNN training by placing feature data on the SSDs.
    ```
    cd python
-   python train.py --dataset=ogbn-papers100M --root=<path_to_data_dir> --sample-mode=sample_neighbors_all --num-sampling-buffers=8 --num-threads-sample=12 --num-threads-fetch=2 --disk-based-feature=spdk --fetch-mode=3 --num-contexts=192 
+   sudo ../../.venv/chignn/bin/python train.py --dataset=ogbn-papers100M --root=<path_to_data_dir> --sample-mode=sample_neighbors_all --num-sampling-buffers=8 --num-threads-sample=12 --num-threads-fetch=2 --disk-based-feature=spdk --fetch-mode=3 --num-contexts=192 
    ```
